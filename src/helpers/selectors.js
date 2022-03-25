@@ -9,3 +9,15 @@ export const getAppointmentsForDay = (state, day) => {
   }
   return resultArr;
 };
+
+export const getInterview = (state, interview) => {
+  const resultObj = {};
+
+  if (interview) {
+    resultObj.student = interview.student;
+    resultObj.interviewer = state.interviewers[interview.interviewer];
+    return resultObj;
+  } else {
+    return null;
+  }
+};
