@@ -21,3 +21,19 @@ export const getInterview = (state, interview) => {
     return null;
   }
 };
+
+export function getInterviewersForDay(state, day) {
+  const dayArr = state.days.filter((ele) => ele.name === day);
+  if (dayArr.length === 0) {
+    return [];
+  }
+  const resultArr = [];
+  if (dayArr.length > 0) {
+    Object.keys(state.interviewers).forEach((id) => {
+      if (dayArr[0].interviewers.includes(state.interviewers[id].id)) {
+        resultArr.push(state.interviewers[id]);
+      }
+    });
+  }
+  return resultArr;
+}

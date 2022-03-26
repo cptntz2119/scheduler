@@ -1,4 +1,4 @@
-import classNames from "classnames";
+
 import React from "react";
 import InterviewerListItem from "./InterviewerListItem";
 import "components/InterviewerList.scss";
