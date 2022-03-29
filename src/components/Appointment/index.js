@@ -27,7 +27,6 @@ export default function Appointment(props) {
   );
 
   const save = (name, interviewer) => {
-    //console.log("index interviewer", interviewer);
     const interview = {
       student: name,
       interviewer,
