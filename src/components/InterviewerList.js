@@ -1,10 +1,9 @@
-
 import React from "react";
 import InterviewerListItem from "./InterviewerListItem";
 import "components/InterviewerList.scss";
 
 export default function interviewerList(props) {
-  console.log(props);
+  //console.log(props);
 
   const renderedInterviewers =
     props.interviewers &&
