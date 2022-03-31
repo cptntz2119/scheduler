@@ -3,12 +3,10 @@ import React from "react";
 import "components/DayListItem.scss";
 
 export default function DayListItem(props) {
-  // const [name, spots, selectd, setDay]=props;
   const dayClass = classNames("day-list__item", {
     "day-list__item--selected": props.selected,
     "day-list__item--full": props.spots === 0,
   });
-
   const formatSpots = (spots) => {
     if (spots === 0) {
       return "no spots remaining";

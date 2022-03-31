@@ -8,12 +8,8 @@ export default function useApplicationData(initial) {
     appointments: {},
     interviewers: {},
   });
-
   const setDay = (day) => setState({ ...state, day });
-  //const setDays = (days) => setState((prev) => ({ ...prev, days }));
-
   const bookInterview = (id, interview) => {
-    //console.log("from application:", id, interview);
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview },
@@ -27,19 +23,13 @@ export default function useApplicationData(initial) {
     const days = [...state.days];
     const currentDayIndex =
       state.days.filter((day) => day.appointments.includes(id))[0]["id"] - 1;
-    console.log(
-      "days",
-      days,
-      state.days.filter((day) => day.appointments.includes(id)),
-      id
-    );
+
     days[currentDayIndex] = {
       ...state.days[currentDayIndex],
       spots: state.days[currentDayIndex].spots - 1,
     };
 
     return axios.put(`/api/appointments/${id}`, { interview }).then((res) => {
-      //console.log("res", res);
       setState({
         ...state,
         appointments,
