@@ -30,6 +30,15 @@ Install dependencies with `npm install`.
 ```sh
 npm start
 ```
+##API server Dependencies
+- body-parser
+- cors
+- dotenv
+- express
+- helmet
+- pg
+- socket.io
+- ws
 
 ## Running Jest Test Framework
 
