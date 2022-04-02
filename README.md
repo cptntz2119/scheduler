@@ -30,7 +30,7 @@ Install dependencies with `npm install`.
 ```sh
 npm start
 ```
-##API server Dependencies
+## API server Dependencies
 - body-parser
 - cors
 - dotenv
