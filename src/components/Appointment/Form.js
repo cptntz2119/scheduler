@@ -3,7 +3,6 @@ import Button from "components/Button";
 import InterviewerList from "components/InterviewerList";
 
 export default function Form(props) {
-  //console.log("props from Form", props);
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
 
@@ -25,6 +24,11 @@ export default function Form(props) {
       setError("Student name cannot be blank");
       return;
     }
+    if (interviewer === null) {
+      setError("Interviewer cannot be blank");
+      return;
+    }
+
     setError("");
     props.onSave(student, interviewer);
   }
@@ -40,7 +44,6 @@ export default function Form(props) {
             value={student}
             placeholder="Enter Student Name"
             onChange={(event) => {
-              //console.log(event.target.value);
               setStudent(event.target.value);
             }}
             data-testid="student-name-input"

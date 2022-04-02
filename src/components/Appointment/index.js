@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-//import InterviewerListItem from "./InterviewerListItem";
 import "components/Appointment/styles.scss";
 import Header from "./Header";
 import Show from "./Show";
@@ -11,7 +10,6 @@ import Error from "./Error";
 import useVisualMode from "hooks/useVisualMode";
 
 export default function Appointment(props) {
-  //console.log("appointment props", props);
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
   const CREATE = "CREATE";
@@ -40,7 +38,7 @@ export default function Appointment(props) {
 
   const deleteInterview = () => {
     transition(DELETING, true);
-    //console.log("deleting interview");
+
     props
       .cancelInterview(props.id)
       .then(() => {
@@ -48,8 +46,6 @@ export default function Appointment(props) {
       })
       .catch((error) => transition(ERROR_DELETE, true));
   };
-
-  //const editInterview = () => {};
 
   return (
     <Fragment>
